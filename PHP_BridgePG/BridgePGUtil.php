@@ -71,6 +71,18 @@ class BridgePGUtil {
 		}
 		return $d;
 	}
+
+
+	public function get_bridge_message_arg($message){
+		$d = "Invalid Bridge message";
+		if($message){
+			$c = @$this->bridgePG->decrypt_wallet_message($message, $d, FALSE);
+			if(!$c)
+				return $message;
+		}
+		return $d;
+	}
+
 	
 	public function get_fraction($ddhhmm = ""){
 		$time_format = "ymdHis";

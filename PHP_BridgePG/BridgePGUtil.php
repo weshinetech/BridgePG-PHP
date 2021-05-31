@@ -265,7 +265,9 @@ class BridgePGUtil {
 			'request_data' => $message_cipher
 		);
 		$json_data = json_encode($json_data_array);
-		$url = 'http://bridgeapi.csccloud.in/v1/' . trim($method, '/') . '/format/json';
+
+		$url = API_URL . trim($method, '/') . '/format/json';
+		// $url = 'http://bridgeapi.csccloud.in/v1/' . trim($method, '/') . '/format/json';
 		//$url = 'http://bridgeapi.csccloud.in/v1/' . trim($method, '/') . '/format/serialized';
 		
 		//echo print_r($this->_do_curl_req($url, $json_data, false));
